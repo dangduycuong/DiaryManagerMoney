@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		137088FA54C2123633C7ABF4 /* Pods_DiaryManagerMoney.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7683B2C13FC9DE7E09D6BFA4 /* Pods_DiaryManagerMoney.framework */; };
 		5E087D242275D2F700F83377 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E087D232275D2F700F83377 /* AppDelegate.swift */; };
 		5E087D262275D2F700F83377 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E087D252275D2F700F83377 /* AddItemViewController.swift */; };
 		5E087D292275D2F700F83377 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E087D272275D2F700F83377 /* Main.storyboard */; };
@@ -15,8 +16,24 @@
 		5E087D312275D2F800F83377 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E087D2F2275D2F800F83377 /* LaunchScreen.storyboard */; };
 		5E087D3C2275D2F900F83377 /* DiaryManagerMoneyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E087D3B2275D2F900F83377 /* DiaryManagerMoneyTests.swift */; };
 		5E087D472275ED5D00F83377 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E087D462275ED5D00F83377 /* CustomTableViewCell.swift */; };
-		5E087D492275F1B900F83377 /* DisplayTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E087D482275F1B900F83377 /* DisplayTableViewController.swift */; };
+		5E087D492275F1B900F83377 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E087D482275F1B900F83377 /* HomeViewController.swift */; };
 		5E1A7EA02279AC3300D65D0C /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1A7E9F2279AC3300D65D0C /* UIView + Extension.swift */; };
+		954A0D7606E39378D46BD7CE /* Pods_DiaryManagerMoneyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EE8C92BBACC279B02A25B5E /* Pods_DiaryManagerMoneyTests.framework */; };
+		FA0B3AFF2A679B62000D6E8C /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0B3AFE2A679B62000D6E8C /* R.generated.swift */; };
+		FA27B8732A678EC400085CFD /* PlayfairDisplay-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA27B8672A678EC300085CFD /* PlayfairDisplay-SemiBoldItalic.ttf */; };
+		FA27B8742A678EC400085CFD /* PlayfairDisplay-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA27B8682A678EC300085CFD /* PlayfairDisplay-Black.ttf */; };
+		FA27B8752A678EC400085CFD /* PlayfairDisplay-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA27B8692A678EC300085CFD /* PlayfairDisplay-Regular.ttf */; };
+		FA27B8762A678EC400085CFD /* PlayfairDisplay-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA27B86A2A678EC400085CFD /* PlayfairDisplay-ExtraBoldItalic.ttf */; };
+		FA27B8772A678EC400085CFD /* PlayfairDisplay-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA27B86B2A678EC400085CFD /* PlayfairDisplay-SemiBold.ttf */; };
+		FA27B8782A678EC400085CFD /* PlayfairDisplay-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA27B86C2A678EC400085CFD /* PlayfairDisplay-Bold.ttf */; };
+		FA27B8792A678EC400085CFD /* PlayfairDisplay-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA27B86D2A678EC400085CFD /* PlayfairDisplay-Italic.ttf */; };
+		FA27B87A2A678EC400085CFD /* PlayfairDisplay-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA27B86E2A678EC400085CFD /* PlayfairDisplay-MediumItalic.ttf */; };
+		FA27B87B2A678EC400085CFD /* PlayfairDisplay-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA27B86F2A678EC400085CFD /* PlayfairDisplay-Medium.ttf */; };
+		FA27B87C2A678EC400085CFD /* PlayfairDisplay-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA27B8702A678EC400085CFD /* PlayfairDisplay-BlackItalic.ttf */; };
+		FA27B87D2A678EC400085CFD /* PlayfairDisplay-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA27B8712A678EC400085CFD /* PlayfairDisplay-BoldItalic.ttf */; };
+		FA27B87E2A678EC400085CFD /* PlayfairDisplay-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA27B8722A678EC400085CFD /* PlayfairDisplay-ExtraBold.ttf */; };
+		FA88995B2A67CAFC00BDA2A6 /* LoadingAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA88995A2A67CAFC00BDA2A6 /* LoadingAnimationViewController.swift */; };
+		FAA645062A67A14900D90897 /* animation_lk98ini8.json in Resources */ = {isa = PBXBuildFile; fileRef = FAA645052A67A14900D90897 /* animation_lk98ini8.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +47,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		17F7C4316759C9E10A9541D5 /* Pods-DiaryManagerMoney.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiaryManagerMoney.debug.xcconfig"; path = "Target Support Files/Pods-DiaryManagerMoney/Pods-DiaryManagerMoney.debug.xcconfig"; sourceTree = "<group>"; };
+		1A3D9AB3B20AB67D503C75E1 /* Pods-DiaryManagerMoneyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiaryManagerMoneyTests.release.xcconfig"; path = "Target Support Files/Pods-DiaryManagerMoneyTests/Pods-DiaryManagerMoneyTests.release.xcconfig"; sourceTree = "<group>"; };
+		5BD688E6897037E563428DA4 /* Pods-DiaryManagerMoney.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiaryManagerMoney.release.xcconfig"; path = "Target Support Files/Pods-DiaryManagerMoney/Pods-DiaryManagerMoney.release.xcconfig"; sourceTree = "<group>"; };
 		5E087D202275D2F700F83377 /* DiaryManagerMoney.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiaryManagerMoney.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E087D232275D2F700F83377 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5E087D252275D2F700F83377 /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
@@ -42,8 +62,26 @@
 		5E087D3B2275D2F900F83377 /* DiaryManagerMoneyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryManagerMoneyTests.swift; sourceTree = "<group>"; };
 		5E087D3D2275D2F900F83377 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E087D462275ED5D00F83377 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
-		5E087D482275F1B900F83377 /* DisplayTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayTableViewController.swift; sourceTree = "<group>"; };
+		5E087D482275F1B900F83377 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		5E1A7E9F2279AC3300D65D0C /* UIView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
+		7683B2C13FC9DE7E09D6BFA4 /* Pods_DiaryManagerMoney.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DiaryManagerMoney.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8EE8C92BBACC279B02A25B5E /* Pods_DiaryManagerMoneyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DiaryManagerMoneyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDFC866E66EE6ECB1704E985 /* Pods-DiaryManagerMoneyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiaryManagerMoneyTests.debug.xcconfig"; path = "Target Support Files/Pods-DiaryManagerMoneyTests/Pods-DiaryManagerMoneyTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FA0B3AFE2A679B62000D6E8C /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		FA27B8672A678EC300085CFD /* PlayfairDisplay-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		FA27B8682A678EC300085CFD /* PlayfairDisplay-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-Black.ttf"; sourceTree = "<group>"; };
+		FA27B8692A678EC300085CFD /* PlayfairDisplay-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-Regular.ttf"; sourceTree = "<group>"; };
+		FA27B86A2A678EC400085CFD /* PlayfairDisplay-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		FA27B86B2A678EC400085CFD /* PlayfairDisplay-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-SemiBold.ttf"; sourceTree = "<group>"; };
+		FA27B86C2A678EC400085CFD /* PlayfairDisplay-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-Bold.ttf"; sourceTree = "<group>"; };
+		FA27B86D2A678EC400085CFD /* PlayfairDisplay-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-Italic.ttf"; sourceTree = "<group>"; };
+		FA27B86E2A678EC400085CFD /* PlayfairDisplay-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-MediumItalic.ttf"; sourceTree = "<group>"; };
+		FA27B86F2A678EC400085CFD /* PlayfairDisplay-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-Medium.ttf"; sourceTree = "<group>"; };
+		FA27B8702A678EC400085CFD /* PlayfairDisplay-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-BlackItalic.ttf"; sourceTree = "<group>"; };
+		FA27B8712A678EC400085CFD /* PlayfairDisplay-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-BoldItalic.ttf"; sourceTree = "<group>"; };
+		FA27B8722A678EC400085CFD /* PlayfairDisplay-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-ExtraBold.ttf"; sourceTree = "<group>"; };
+		FA88995A2A67CAFC00BDA2A6 /* LoadingAnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingAnimationViewController.swift; sourceTree = "<group>"; };
+		FAA645052A67A14900D90897 /* animation_lk98ini8.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animation_lk98ini8.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				137088FA54C2123633C7ABF4 /* Pods_DiaryManagerMoney.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,18 +97,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				954A0D7606E39378D46BD7CE /* Pods_DiaryManagerMoneyTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		42DC63C6AF0B3DC0D95EEEB6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7683B2C13FC9DE7E09D6BFA4 /* Pods_DiaryManagerMoney.framework */,
+				8EE8C92BBACC279B02A25B5E /* Pods_DiaryManagerMoneyTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5E087D172275D2F700F83377 = {
 			isa = PBXGroup;
 			children = (
 				5E087D222275D2F700F83377 /* DiaryManagerMoney */,
 				5E087D3A2275D2F900F83377 /* DiaryManagerMoneyTests */,
 				5E087D212275D2F700F83377 /* Products */,
+				92E56AC96E19F2D71F2CD381 /* Pods */,
+				42DC63C6AF0B3DC0D95EEEB6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -85,11 +136,11 @@
 		5E087D222275D2F700F83377 /* DiaryManagerMoney */ = {
 			isa = PBXGroup;
 			children = (
+				FA8899582A67CADE00BDA2A6 /* Shared */,
+				FA27B8642A678E6F00085CFD /* Resources */,
 				5E087D232275D2F700F83377 /* AppDelegate.swift */,
-				5E087D252275D2F700F83377 /* AddItemViewController.swift */,
-				5E087D482275F1B900F83377 /* DisplayTableViewController.swift */,
-				5E087D462275ED5D00F83377 /* CustomTableViewCell.swift */,
-				5E1A7E9F2279AC3300D65D0C /* UIView + Extension.swift */,
+				FA27B87F2A6793C000085CFD /* Modules */,
+				FA27B8802A6793CD00085CFD /* Extension */,
 				5E087D272275D2F700F83377 /* Main.storyboard */,
 				5E087D2D2275D2F800F83377 /* Assets.xcassets */,
 				5E087D2F2275D2F800F83377 /* LaunchScreen.storyboard */,
@@ -108,6 +159,88 @@
 			path = DiaryManagerMoneyTests;
 			sourceTree = "<group>";
 		};
+		92E56AC96E19F2D71F2CD381 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				17F7C4316759C9E10A9541D5 /* Pods-DiaryManagerMoney.debug.xcconfig */,
+				5BD688E6897037E563428DA4 /* Pods-DiaryManagerMoney.release.xcconfig */,
+				EDFC866E66EE6ECB1704E985 /* Pods-DiaryManagerMoneyTests.debug.xcconfig */,
+				1A3D9AB3B20AB67D503C75E1 /* Pods-DiaryManagerMoneyTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		FA27B8642A678E6F00085CFD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FAA645052A67A14900D90897 /* animation_lk98ini8.json */,
+				FA0B3AFE2A679B62000D6E8C /* R.generated.swift */,
+				FA27B8652A678E7B00085CFD /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		FA27B8652A678E7B00085CFD /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				FA27B8662A678EA300085CFD /* Playfair Display */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		FA27B8662A678EA300085CFD /* Playfair Display */ = {
+			isa = PBXGroup;
+			children = (
+				FA27B8682A678EC300085CFD /* PlayfairDisplay-Black.ttf */,
+				FA27B8702A678EC400085CFD /* PlayfairDisplay-BlackItalic.ttf */,
+				FA27B86C2A678EC400085CFD /* PlayfairDisplay-Bold.ttf */,
+				FA27B8712A678EC400085CFD /* PlayfairDisplay-BoldItalic.ttf */,
+				FA27B8722A678EC400085CFD /* PlayfairDisplay-ExtraBold.ttf */,
+				FA27B86A2A678EC400085CFD /* PlayfairDisplay-ExtraBoldItalic.ttf */,
+				FA27B86D2A678EC400085CFD /* PlayfairDisplay-Italic.ttf */,
+				FA27B86F2A678EC400085CFD /* PlayfairDisplay-Medium.ttf */,
+				FA27B86E2A678EC400085CFD /* PlayfairDisplay-MediumItalic.ttf */,
+				FA27B8692A678EC300085CFD /* PlayfairDisplay-Regular.ttf */,
+				FA27B86B2A678EC400085CFD /* PlayfairDisplay-SemiBold.ttf */,
+				FA27B8672A678EC300085CFD /* PlayfairDisplay-SemiBoldItalic.ttf */,
+			);
+			path = "Playfair Display";
+			sourceTree = "<group>";
+		};
+		FA27B87F2A6793C000085CFD /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				5E087D252275D2F700F83377 /* AddItemViewController.swift */,
+				5E087D482275F1B900F83377 /* HomeViewController.swift */,
+				5E087D462275ED5D00F83377 /* CustomTableViewCell.swift */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		FA27B8802A6793CD00085CFD /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				5E1A7E9F2279AC3300D65D0C /* UIView + Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		FA8899582A67CADE00BDA2A6 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				FA8899592A67CAE500BDA2A6 /* LoadingAnimation */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		FA8899592A67CAE500BDA2A6 /* LoadingAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				FA88995A2A67CAFC00BDA2A6 /* LoadingAnimationViewController.swift */,
+			);
+			path = LoadingAnimation;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -115,9 +248,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5E087D402275D2F900F83377 /* Build configuration list for PBXNativeTarget "DiaryManagerMoney" */;
 			buildPhases = (
+				E68DFE8161115C60E65EC695 /* [CP] Check Pods Manifest.lock */,
+				FA0B3AFD2A679AF1000D6E8C /* ShellScript */,
 				5E087D1C2275D2F700F83377 /* Sources */,
 				5E087D1D2275D2F700F83377 /* Frameworks */,
 				5E087D1E2275D2F700F83377 /* Resources */,
+				EADBFF467A2AF1A86F722347 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +268,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5E087D432275D2F900F83377 /* Build configuration list for PBXNativeTarget "DiaryManagerMoneyTests" */;
 			buildPhases = (
+				CFB104D2317DE4D8B51B3371 /* [CP] Check Pods Manifest.lock */,
 				5E087D332275D2F900F83377 /* Sources */,
 				5E087D342275D2F900F83377 /* Frameworks */,
 				5E087D352275D2F900F83377 /* Resources */,
@@ -166,7 +303,7 @@
 				};
 			};
 			buildConfigurationList = 5E087D1B2275D2F700F83377 /* Build configuration list for PBXProject "DiaryManagerMoney" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -189,8 +326,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA27B8782A678EC400085CFD /* PlayfairDisplay-Bold.ttf in Resources */,
+				FA27B8762A678EC400085CFD /* PlayfairDisplay-ExtraBoldItalic.ttf in Resources */,
 				5E087D312275D2F800F83377 /* LaunchScreen.storyboard in Resources */,
+				FA27B8772A678EC400085CFD /* PlayfairDisplay-SemiBold.ttf in Resources */,
 				5E087D2E2275D2F800F83377 /* Assets.xcassets in Resources */,
+				FA27B8792A678EC400085CFD /* PlayfairDisplay-Italic.ttf in Resources */,
+				FA27B87D2A678EC400085CFD /* PlayfairDisplay-BoldItalic.ttf in Resources */,
+				FA27B87E2A678EC400085CFD /* PlayfairDisplay-ExtraBold.ttf in Resources */,
+				FA27B8752A678EC400085CFD /* PlayfairDisplay-Regular.ttf in Resources */,
+				FA27B87C2A678EC400085CFD /* PlayfairDisplay-BlackItalic.ttf in Resources */,
+				FA27B8742A678EC400085CFD /* PlayfairDisplay-Black.ttf in Resources */,
+				FA27B87A2A678EC400085CFD /* PlayfairDisplay-MediumItalic.ttf in Resources */,
+				FA27B8732A678EC400085CFD /* PlayfairDisplay-SemiBoldItalic.ttf in Resources */,
+				FA27B87B2A678EC400085CFD /* PlayfairDisplay-Medium.ttf in Resources */,
+				FAA645062A67A14900D90897 /* animation_lk98ini8.json in Resources */,
 				5E087D292275D2F700F83377 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -204,17 +354,102 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		CFB104D2317DE4D8B51B3371 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DiaryManagerMoneyTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E68DFE8161115C60E65EC695 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DiaryManagerMoney-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EADBFF467A2AF1A86F722347 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DiaryManagerMoney/Pods-DiaryManagerMoney-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DiaryManagerMoney/Pods-DiaryManagerMoney-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DiaryManagerMoney/Pods-DiaryManagerMoney-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FA0B3AFD2A679AF1000D6E8C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5E087D1C2275D2F700F83377 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				5E087D262275D2F700F83377 /* AddItemViewController.swift in Sources */,
+				FA0B3AFF2A679B62000D6E8C /* R.generated.swift in Sources */,
 				5E087D242275D2F700F83377 /* AppDelegate.swift in Sources */,
 				5E1A7EA02279AC3300D65D0C /* UIView + Extension.swift in Sources */,
+				FA88995B2A67CAFC00BDA2A6 /* LoadingAnimationViewController.swift in Sources */,
 				5E087D472275ED5D00F83377 /* CustomTableViewCell.swift in Sources */,
 				5E087D2C2275D2F700F83377 /* DiaryManagerMoney.xcdatamodeld in Sources */,
-				5E087D492275F1B900F83377 /* DisplayTableViewController.swift in Sources */,
+				5E087D492275F1B900F83377 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,6 +549,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -368,16 +604,19 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		5E087D412275D2F900F83377 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 17F7C4316759C9E10A9541D5 /* Pods-DiaryManagerMoney.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = DiaryManagerMoney/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -391,10 +630,12 @@
 		};
 		5E087D422275D2F900F83377 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5BD688E6897037E563428DA4 /* Pods-DiaryManagerMoney.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = DiaryManagerMoney/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -408,6 +649,7 @@
 		};
 		5E087D442275D2F900F83377 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EDFC866E66EE6ECB1704E985 /* Pods-DiaryManagerMoneyTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -428,6 +670,7 @@
 		};
 		5E087D452275D2F900F83377 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1A3D9AB3B20AB67D503C75E1 /* Pods-DiaryManagerMoneyTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

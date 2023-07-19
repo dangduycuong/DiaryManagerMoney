@@ -8,7 +8,15 @@
 
 import UIKit
 
-class DisplayTableViewController: UITableViewController {
+class HomeViewController: UIViewController {
+    @IBOutlet weak var tableView: UITableView!
+    
+    private lazy var animation: LoadingAnimationViewController = {
+        let vc = LoadingAnimationViewController()
+        vc.modalTransitionStyle = .crossDissolve
+        vc.modalPresentationStyle = .overFullScreen
+        return vc
+    } ()
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
@@ -20,17 +28,18 @@ class DisplayTableViewController: UITableViewController {
         //self.tableView.rowHeight = UITableView.automaticDimension
         tableView.allowsMultipleSelectionDuringEditing = true
     }
-
-
-    override func viewWillAppear(_ animated: Bool) {
-        //super.viewWillAppear(animated)
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         fetchData()
     }
     
     func fetchData() {
+        present(animation, animated: true)
         do {
             items = try context.fetch(Item.fetchRequest())
             DispatchQueue.main.async {
+                self.animation.dismiss(animated: true)
                 self.tableView.reloadData()
             }
         } catch {
@@ -38,20 +47,31 @@ class DisplayTableViewController: UITableViewController {
         }
     }
     
+    @IBAction func onTappedAddItem(_ sender: UIBarButtonItem) {
+        guard let vc = R.storyboard.main.addItemViewController() else { return }
+        vc.modalTransitionStyle = .crossDissolve
+        vc.modalPresentationStyle = .overFullScreen
+        present(vc, animated: true)
+    }
+    
+
+}
+
+extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
+     func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return items.count
     }
 
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
 
         
@@ -111,6 +131,8 @@ class DisplayTableViewController: UITableViewController {
     }
     
     
+    
+    
 //    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //        let cellToDeSelect: UITableViewCell = tableView.cellForRow(at: indexPath)!
 //        cellToDeSelect.contentView.backgroundColor = #colorLiteral(red: 0.7411764706, green: 0.7843137255, blue: 0.4980392157, alpha: 1)
@@ -133,5 +155,4 @@ class DisplayTableViewController: UITableViewController {
 //
 //        return [delete]
 //    }
-
 }
