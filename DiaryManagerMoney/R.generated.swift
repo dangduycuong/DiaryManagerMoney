@@ -12,17 +12,26 @@ let R = _R(bundle: Bundle(for: BundleFinder.self))
 
 struct _R {
   let bundle: Foundation.Bundle
-
-  let reuseIdentifier = reuseIdentifier()
-
+  var color: color { .init(bundle: bundle) }
+  var image: image { .init(bundle: bundle) }
   var font: font { .init(bundle: bundle) }
   var file: file { .init(bundle: bundle) }
+  var nib: nib { .init(bundle: bundle) }
   var storyboard: storyboard { .init(bundle: bundle) }
 
+  func color(bundle: Foundation.Bundle) -> color {
+    .init(bundle: bundle)
+  }
+  func image(bundle: Foundation.Bundle) -> image {
+    .init(bundle: bundle)
+  }
   func font(bundle: Foundation.Bundle) -> font {
     .init(bundle: bundle)
   }
   func file(bundle: Foundation.Bundle) -> file {
+    .init(bundle: bundle)
+  }
+  func nib(bundle: Foundation.Bundle) -> nib {
     .init(bundle: bundle)
   }
   func storyboard(bundle: Foundation.Bundle) -> storyboard {
@@ -30,11 +39,34 @@ struct _R {
   }
   func validate() throws {
     try self.font.validate()
+    try self.nib.validate()
     try self.storyboard.validate()
   }
 
   struct project {
     let developmentRegion = "en"
+  }
+
+  /// This `_R.color` struct is generated, and contains static references to 1 colors.
+  struct color {
+    let bundle: Foundation.Bundle
+
+    /// Color `blue023F62`.
+    var blue023F62: RswiftResources.ColorResource { .init(name: "blue023F62", path: [], bundle: bundle) }
+  }
+
+  /// This `_R.image` struct is generated, and contains static references to 3 images.
+  struct image {
+    let bundle: Foundation.Bundle
+
+    /// Image `add_to_photos_24px`.
+    var add_to_photos_24px: RswiftResources.ImageResource { .init(name: "add_to_photos_24px", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `backGround`.
+    var backGround: RswiftResources.ImageResource { .init(name: "backGround", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `icons8-back`.
+    var icons8Back: RswiftResources.ImageResource { .init(name: "icons8-back", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
   }
 
   /// This `_R.font` struct is generated, and contains static references to 12 fonts.
@@ -131,11 +163,16 @@ struct _R {
     var animation_lk98ini8Json: RswiftResources.FileResource { .init(name: "animation_lk98ini8", pathExtension: "json", bundle: bundle, locale: LocaleReference.none) }
   }
 
-  /// This `_R.reuseIdentifier` struct is generated, and contains static references to 1 reuse identifiers.
-  struct reuseIdentifier {
+  /// This `_R.nib` struct is generated, and contains static references to 1 nibs.
+  struct nib {
+    let bundle: Foundation.Bundle
 
-    /// Reuse identifier `Cell`.
-    let cell: RswiftResources.ReuseIdentifier<CustomTableViewCell> = .init(identifier: "Cell")
+    /// Nib `CustomTableViewCell`.
+    var customTableViewCell: RswiftResources.NibReference<CustomTableViewCell> { .init(name: "CustomTableViewCell", bundle: bundle) }
+
+    func validate() throws {
+
+    }
   }
 
   /// This `_R.storyboard` struct is generated, and contains static references to 2 storyboards.
@@ -170,18 +207,16 @@ struct _R {
 
     /// Storyboard `Main`.
     struct main: RswiftResources.StoryboardReference, RswiftResources.InitialControllerContainer {
-      typealias InitialController = UIKit.UINavigationController
+      typealias InitialController = SplashViewController
 
       let bundle: Foundation.Bundle
 
       let name = "Main"
 
-      var addItemViewController: RswiftResources.StoryboardViewControllerIdentifier<AddItemViewController> { .init(identifier: "AddItemViewController", storyboard: name, bundle: bundle) }
-      var homeViewController: RswiftResources.StoryboardViewControllerIdentifier<HomeViewController> { .init(identifier: "HomeViewController", storyboard: name, bundle: bundle) }
+      var addItemViewController: RswiftResources.StoryboardViewControllerIdentifier<UIKit.UIViewController> { .init(identifier: "AddItemViewController", storyboard: name, bundle: bundle) }
 
       func validate() throws {
-        if addItemViewController() == nil { throw RswiftResources.ValidationError("[R.swift] ViewController with identifier 'addItemViewController' could not be loaded from storyboard 'Main' as 'AddItemViewController'.") }
-        if homeViewController() == nil { throw RswiftResources.ValidationError("[R.swift] ViewController with identifier 'homeViewController' could not be loaded from storyboard 'Main' as 'HomeViewController'.") }
+        if addItemViewController() == nil { throw RswiftResources.ValidationError("[R.swift] ViewController with identifier 'addItemViewController' could not be loaded from storyboard 'Main' as 'UIKit.UIViewController'.") }
       }
     }
   }

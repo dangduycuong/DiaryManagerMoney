@@ -25,8 +25,8 @@ class LoadingAnimationViewController: UIViewController {
         let centerView = UIView()
         view.layout(centerView)
             .center()
-            .width(88)
-            .height(88)
+            .width(44)
+            .height(44)
         
         centerView.layout(animationView)
             .top()

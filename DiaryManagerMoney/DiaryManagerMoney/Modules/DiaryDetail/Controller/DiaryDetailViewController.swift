@@ -1,31 +1,127 @@
 //
-//  ViewController.swift
+//  DiaryDetailViewController.swift
 //  DiaryManagerMoney
 //
-//  Created by Cuong on 4/28/19.
-//  Copyright © 2019 Cuong. All rights reserved.
+//  Created by cuongdd on 27/02/2024.
+//  Copyright © 2024 Cuong. All rights reserved.
 //
 
 import UIKit
 
-class AddItemViewController: UIViewController, UITextViewDelegate {
+class DiaryDetailViewController: BaseViewController {
+    lazy var saveButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Lưu Lại", for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 21)
+        button.layer.cornerRadius = 4
+        button.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
+        return button
+    }()
     
-    @IBOutlet weak var titleTextField: UITextField!
+    private lazy var titleTextField: BaseTextField = {
+        let textField = BaseTextField()
+        textField.delegate = self
+        textField.font = UIFont.boldSystemFont(ofSize: 21)
+        textField.layer.borderWidth = 1
+        textField.layer.borderColor = UIColor.blue.cgColor
+        textField.clearButtonMode = .whileEditing
+        textField.placeholder = "Nhập tiêu đề"
+        return textField
+    }()
     
-    @IBOutlet weak var moneyTextField: UITextField!
+    private lazy var moneyTextField: BaseTextField = {
+        let textField = BaseTextField()
+        textField.delegate = self
+        textField.font = UIFont.systemFont(ofSize: 21)
+        textField.layer.borderWidth = 1
+        textField.layer.borderColor = UIColor.blue.cgColor
+        textField.clearButtonMode = .whileEditing
+        textField.keyboardType = .numberPad
+        textField.placeholder = "Nhập số tiền"
+        return textField
+    }()
     
-    @IBOutlet weak var dateTextField: UITextField!
+    private lazy var dateTextField: BaseTextField = {
+        let textField = BaseTextField()
+        textField.delegate = self
+        textField.font = UIFont.systemFont(ofSize: 21)
+        textField.layer.borderWidth = 1
+        textField.layer.borderColor = UIColor.blue.cgColor
+        textField.clearButtonMode = .whileEditing
+        textField.placeholder = "Chọn thời gian"
+        return textField
+    }()
     
-    @IBOutlet weak var datePicker: UIDatePicker!
+    private lazy var datePicker: UIDatePicker = {
+        let datePicker = UIDatePicker()
+        return datePicker
+    }()
     
-    private var money: Int = 0
+    private var money: Int64 = 0
     private var date: Date = Date.now
+    var diaryModel: DiaryModel?
+    
+    override func loadView() {
+        super.loadView()
+        prepareForViewController()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
         setupUI()
+        
+    }
+    
+    private func prepareForViewController() {
+        addBackGround()
+        addTitle(diaryModel?.title ?? "Thêm dữ liệu")
+        
+        addBackButton()
+        
+        view.layout(titleTextField)
+            .below(titleLabel, 16)
+            .left(16)
+            .right(16)
+            .height(40)
+        
+        view.layout(moneyTextField)
+            .below(titleTextField, 16)
+            .left(16)
+            .right(16)
+            .height(40)
+        
+        view.layout(dateTextField)
+            .below(moneyTextField, 16)
+            .left(16)
+            .right(16)
+            .height(40)
+        
+        view.layout(saveButton)
+            .centerX()
+            .bottomSafe(16)
+            .width(150)
+            .height(40)
+        
+        saveButton.backgroundColor = UIColor.blue
+        
+        if let diaryModel = diaryModel {
+            titleTextField.text = diaryModel.title
+            moneyTextField.text = "\(diaryModel.money)"
+            
+            let value = moneyTextField.text ?? ""
+            let number = value.replacingOccurrences(of: ",", with: "").toInt()
+            money = Int64(number)
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "EEEE, HH:mm:ss d MMMM, yyyy"
+            dateFormatter.locale = Locale(identifier: "vi_VN")
+            if let date = diaryModel.date {
+                self.date = date
+                dateTextField.text = dateFormatter.string(from: date)
+            }
+        }
     }
     
     private func setupUI() {
@@ -34,13 +130,12 @@ class AddItemViewController: UIViewController, UITextViewDelegate {
         datePicker.addTarget(self, action: #selector(handleDatePicker(sender:)), for: .valueChanged)
         let datePickerView = UIDatePicker()
         datePickerView.preferredDatePickerStyle = .inline
-        datePickerView.datePickerMode = .dateAndTime
+        datePickerView.datePickerMode = .date
         datePickerView.locale = Locale(identifier: "vi_VN")
         datePickerView.addTarget(self, action: #selector(handleDatePicker(sender:)), for: .valueChanged)
         datePickerView.translatesAutoresizingMaskIntoConstraints = false
         
         dateTextField.inputView = datePickerView
-        
     }
     
     @objc func handleDatePicker(sender: UIDatePicker) {
@@ -70,11 +165,10 @@ class AddItemViewController: UIViewController, UITextViewDelegate {
         datePicker.isHidden = true
     }
     
-    @IBAction func saveButton(_ button: UIButton) {
-        guard let title =  titleTextField.text else { return }
-        guard let money =  moneyTextField.text else { return }
+    @IBAction func saveButtonTapped(_ button: UIButton) {
+        guard let title = titleTextField.text else { return }
         
-        if title.isEmpty || money.isEmpty {
+        if title.isEmpty {
             print("No Data")
             
             let alert = UIAlertController(title: "Hãy viết gì đó", message: "Bạn chưa nhập nội dung gì.", preferredStyle: .alert)
@@ -83,21 +177,27 @@ class AddItemViewController: UIViewController, UITextViewDelegate {
             self.present(alert, animated: true, completion: nil)
             
         } else {
-            
-            
             let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-            let newEntry = Item(context: context)
+            
+            if let diaryModel = diaryModel {
+                diaryModel.title = title
+                diaryModel.money = money
+                diaryModel.date = date
+                do {
+                    try context.save()
+                } catch {
+                    print("---- error", error)
+                }
+                navigationController?.popViewController(animated: true)
+                return
+            }
+            let newEntry = DiaryModel(context: context)
             
             newEntry.title = title
-            if let money = Double(money) {
-                newEntry.money = money
-            }
-            
+            newEntry.money = money
             newEntry.date = date
             
             (UIApplication.shared.delegate as! AppDelegate).saveContext()
-            
-            navigationController?.popViewController(animated: true)
         }
     }
     
@@ -105,11 +205,9 @@ class AddItemViewController: UIViewController, UITextViewDelegate {
         //        datePicker.isHidden = true
     }
     
-    
-    
 }
 
-extension AddItemViewController: UITextFieldDelegate {
+extension DiaryDetailViewController: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         datePicker.isHidden = true
     }
@@ -173,7 +271,6 @@ extension AddItemViewController: UITextFieldDelegate {
         moneyTextField.resignFirstResponder()
         let value = moneyTextField.text ?? ""
         let number = value.replacingOccurrences(of: ",", with: "").toInt()
-        print("---- value of money is ", number)
         return true
     }
     
@@ -181,22 +278,14 @@ extension AddItemViewController: UITextFieldDelegate {
         if textField == moneyTextField {
             let value = moneyTextField.text ?? ""
             let number = value.replacingOccurrences(of: ",", with: "").toInt()
-            print("---- value of money is ", number)
+            money = Int64(number)
         }
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
         moneyTextField.resignFirstResponder()
         let value = moneyTextField.text ?? ""
-        let number = value.replacingOccurrences(of: ",", with: "").toInt()
-        money = number
-        print("---- value of money is ", number)
-    }
-}
-
-extension String {
-    
-    func toInt() -> Int {
-        return Int(self) ?? 0
+        let number = value.replacingOccurrences(of: ",", with: "")
+        money = Int64(number) ?? 0
     }
 }
