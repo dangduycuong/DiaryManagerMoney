@@ -8,6 +8,7 @@
 
 import UIKit
 import Lottie
+import Material
 
 class LoadingAnimationViewController: UIViewController {
     
@@ -22,24 +23,16 @@ class LoadingAnimationViewController: UIViewController {
         super.viewDidLoad()
         view.alpha = 0.5
         let centerView = UIView()
-        centerView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(centerView)
-        NSLayoutConstraint.activate([
-            centerView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            centerView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            centerView.widthAnchor.constraint(equalToConstant: view.bounds.size.width),
-            centerView.heightAnchor.constraint(equalToConstant: view.bounds.size.width),
-        ])
-        centerView.backgroundColor = .clear
-        animationView.translatesAutoresizingMaskIntoConstraints = false
-        centerView.addSubview(animationView)
-        NSLayoutConstraint.activate([
-            animationView.centerXAnchor.constraint(equalTo: centerView.centerXAnchor),
-            animationView.centerYAnchor.constraint(equalTo: centerView.centerYAnchor),
-            animationView.leadingAnchor.constraint(equalTo: centerView.leadingAnchor, constant: 16),
-            animationView.widthAnchor.constraint(equalToConstant: 44),
-            animationView.heightAnchor.constraint(equalToConstant: 44)
-        ])
+        view.layout(centerView)
+            .center()
+            .width(88)
+            .height(88)
+        
+        centerView.layout(animationView)
+            .top()
+            .left()
+            .bottom()
+            .right()
         animationView.play()
     }
     

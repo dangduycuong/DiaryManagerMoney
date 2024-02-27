@@ -10,6 +10,7 @@ import UIKit
 
 class AddItemViewController: UIViewController, UITextViewDelegate {
     
+    @IBOutlet weak var titleTextField: UITextField!
     
     @IBOutlet weak var moneyTextField: UITextField!
     
@@ -17,7 +18,8 @@ class AddItemViewController: UIViewController, UITextViewDelegate {
     
     @IBOutlet weak var datePicker: UIDatePicker!
     
-    
+    private var money: Int = 0
+    private var date: Date = Date.now
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +48,7 @@ class AddItemViewController: UIViewController, UITextViewDelegate {
         dateFormatter.dateFormat = "EEEE, HH:mm:ss d MMMM, yyyy"
         dateFormatter.locale = Locale(identifier: "vi_VN")
         dateTextField.text = dateFormatter.string(from: sender.date)
+        self.date = sender.date
     }
     
     override func didReceiveMemoryWarning() {
@@ -68,43 +71,34 @@ class AddItemViewController: UIViewController, UITextViewDelegate {
     }
     
     @IBAction func saveButton(_ button: UIButton) {
-        //        guard let enteredText =  itemEntryTextView.text else {
-        //            return
-        //        }
-        //
-        //        if enteredText.isEmpty || itemEntryTextView.text == "Hôm nay có gì?" {
-        //            print("No Data")
-        //
-        //            let alert = UIAlertController(title: "Hãy viết gì đó", message: "Bạn chưa nhập nội dung gì.", preferredStyle: .alert)
-        //            alert.addAction(UIAlertAction(title: "OK", style: .default) { action in })
-        //
-        //            self.present(alert, animated: true, completion: nil)
-        //
-        //        } else {
-        //            let date = Date()
-        //            let formatter = DateFormatter()
-        //            formatter.dateFormat = "dd-MM-yyyy | h:mm a"
-        //            let currentDate = formatter.string(from: date)
-        //
-        //            let timeFormatter = DateFormatter()
-        //            timeFormatter.timeStyle = .short
-        //            let currentTime = timeFormatter.string(from: date)
-        //
-        //            guard let entryText = itemEntryTextView?.text else {
-        //                return
-        //            }
-        //
-        //            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        //            let newEntry = Item(context: context)
-        //
-        //            newEntry.title = entryText
-        //            newEntry.date = currentDate
-        //            newEntry.time = currentTime
-        //
-        //            (UIApplication.shared.delegate as! AppDelegate).saveContext()
-        //
-        //            dismiss(animated: true, completion: nil)
-        //        }
+        guard let title =  titleTextField.text else { return }
+        guard let money =  moneyTextField.text else { return }
+        
+        if title.isEmpty || money.isEmpty {
+            print("No Data")
+            
+            let alert = UIAlertController(title: "Hãy viết gì đó", message: "Bạn chưa nhập nội dung gì.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default) { action in })
+            
+            self.present(alert, animated: true, completion: nil)
+            
+        } else {
+            
+            
+            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+            let newEntry = Item(context: context)
+            
+            newEntry.title = title
+            if let money = Double(money) {
+                newEntry.money = money
+            }
+            
+            newEntry.date = date
+            
+            (UIApplication.shared.delegate as! AppDelegate).saveContext()
+            
+            navigationController?.popViewController(animated: true)
+        }
     }
     
     @IBAction func onTappedOverScreen(_ sender: UITapGestureRecognizer) {
@@ -121,6 +115,9 @@ extension AddItemViewController: UITextFieldDelegate {
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if textField == titleTextField {
+            return true
+        }
         // I try this one
         if string == "0" {
             if textField.text!.count == 0 {
@@ -180,10 +177,19 @@ extension AddItemViewController: UITextFieldDelegate {
         return true
     }
     
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField == moneyTextField {
+            let value = moneyTextField.text ?? ""
+            let number = value.replacingOccurrences(of: ",", with: "").toInt()
+            print("---- value of money is ", number)
+        }
+    }
+    
     func textViewDidEndEditing(_ textView: UITextView) {
         moneyTextField.resignFirstResponder()
         let value = moneyTextField.text ?? ""
         let number = value.replacingOccurrences(of: ",", with: "").toInt()
+        money = number
         print("---- value of money is ", number)
     }
 }

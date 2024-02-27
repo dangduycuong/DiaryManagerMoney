@@ -9,6 +9,7 @@ target 'DiaryManagerMoney' do
 	pod 'IQKeyboardManagerSwift'
 	pod 'R.swift'
 	pod 'lottie-ios'
+	pod 'Material'
 
   target 'DiaryManagerMoneyTests' do
     inherit! :search_paths

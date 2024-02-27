@@ -11,12 +11,12 @@ import UIKit
 class HomeViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
-    private lazy var animation: LoadingAnimationViewController = {
+    private lazy var animationViewController: LoadingAnimationViewController = {
         let vc = LoadingAnimationViewController()
         vc.modalTransitionStyle = .crossDissolve
         vc.modalPresentationStyle = .overFullScreen
         return vc
-    } ()
+    }()
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
@@ -35,11 +35,11 @@ class HomeViewController: UIViewController {
     }
     
     func fetchData() {
-        present(animation, animated: true)
+        present(animationViewController, animated: true)
         do {
             items = try context.fetch(Item.fetchRequest())
             DispatchQueue.main.async {
-                self.animation.dismiss(animated: true)
+                self.animationViewController.dismiss(animated: true)
                 self.tableView.reloadData()
             }
         } catch {
@@ -49,9 +49,7 @@ class HomeViewController: UIViewController {
     
     @IBAction func onTappedAddItem(_ sender: UIBarButtonItem) {
         guard let vc = R.storyboard.main.addItemViewController() else { return }
-        vc.modalTransitionStyle = .crossDissolve
-        vc.modalPresentationStyle = .overFullScreen
-        present(vc, animated: true)
+        navigationController?.pushViewController(vc, animated: true)
     }
     
 
@@ -76,12 +74,17 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 
         
         let date = items.reversed()[indexPath.row].date
-        let time = items.reversed()[indexPath.row].time
+        let title = items.reversed()[indexPath.row].title
         
-        cell.titleLabel.text = items[indexPath.row].title
-        print(items[indexPath.row].title)
-        if let date = date, let time = time {
-            let timeStamp = "Add on \(date) at \(time)"
+        cell.titleLabel.text = title
+         
+         
+         
+        if let date = date {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd-MM-YYYY, HH:mm:ss"
+            let string = dateFormatter.string(from: date)
+            let timeStamp = "Add on \(string)"
             cell.dateLabel.text = timeStamp
         }
         return cell
